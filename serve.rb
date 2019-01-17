@@ -1,4 +1,5 @@
 # coding: utf-8
+
 require 'sequel'
 require 'sinatra'
 require 'parseconfig'
@@ -45,3 +46,4 @@ class MyBBS < Sinatra::Base
     erb :index
   end
 end
+MyBBS.run! host: CONFIG['host'], port: CONFIG['port'].to_i
