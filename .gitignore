@@ -1,0 +1,5 @@
+config.conf
+/vendor/bundle
+node_modules
+.bundle/
+*.db
