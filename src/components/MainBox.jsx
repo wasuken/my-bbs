@@ -15,7 +15,7 @@ const RightBox = styled.div`
     padding:10px 0px 5px 20px
 	font-size:18px;
 `;
-const BottomBox = styled.div`
+const FooterBox = styled.div`
     padding:10px 0px 5px 20px
 	font-size:18px;
 `;
@@ -28,10 +28,10 @@ class MainBox extends React.Component{
 	render(){
 		return (
 			<div>
-			  <Header></Header>
-			  <LeftBox></LeftBox>
-			  <RightBox></RightBox>
-			  <BottomBox></BottomBox>
+			  <Header>{this.props.headerComponent}</Header>
+			  <LeftBox>{this.props.leftComponent}</LeftBox>
+			  <RightBox>{this.props.rightComponent}</RightBox>
+			  <FooterBox>{this.props.footerComponent}</FooterBox>
 			</div>
 		)
 	}

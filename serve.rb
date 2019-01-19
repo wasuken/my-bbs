@@ -46,4 +46,4 @@ class MyBBS < Sinatra::Base
     erb :index
   end
 end
-MyBBS.run! host: CONFIG['host'], port: CONFIG['port'].to_i
+MyBBS.run! host: CONFIG['host'], port: CONFIG['port'].to_i, bind: CONFIG['bind']
