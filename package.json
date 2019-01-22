@@ -5,13 +5,15 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "./scripts/build.sh"
+		"build": "./scripts/build.sh",
+		"watch": "watch ./scripts/build.sh ./src"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"bulma": "^0.7.2",
+		"jslint": "^0.12.0",
 		"react": "^16.7.0",
 		"react-bulma": "0.0.1",
 		"react-dom": "^16.7.0",

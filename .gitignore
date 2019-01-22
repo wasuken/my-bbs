@@ -3,3 +3,5 @@ config.conf
 node_modules
 .bundle/
 *.db
+public/js/**/*.*
+public/img/**/*.*

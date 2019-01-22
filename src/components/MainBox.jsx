@@ -20,7 +20,6 @@ const FooterBox = styled.div`
 	font-size:18px;
 `;
 
-
 class MainBox extends React.Component{
 	constructor(){
 		super();
@@ -28,7 +27,7 @@ class MainBox extends React.Component{
 	render(){
 		return (
 			<div>
-			  <Header>{this.props.headerComponent}</Header>
+			  <Header title={this.props.title}>{this.props.headerComponent}</Header>
 			  <LeftBox>{this.props.leftComponent}</LeftBox>
 			  <RightBox>{this.props.rightComponent}</RightBox>
 			  <FooterBox>{this.props.footerComponent}</FooterBox>
@@ -36,3 +35,4 @@ class MainBox extends React.Component{
 		)
 	}
 }
+export default MainBox;
