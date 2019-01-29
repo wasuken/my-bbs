@@ -8,11 +8,15 @@ const Header = styled.div`
 	font-size:18px;
 `;
 const LeftBox = styled.div`
-    padding:10px 0px 5px 20px
+    padding:10px 0px 5px 20px;
+	float: left;
+	width: 50%;
 	font-size:18px;
 `;
 const RightBox = styled.div`
     padding:10px 0px 5px 20px
+	width: 50%;
+	float: right;
 	font-size:18px;
 `;
 const FooterBox = styled.div`

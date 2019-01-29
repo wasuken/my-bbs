@@ -7,7 +7,7 @@ require 'json'
 
 module MySpace
   CONFIG = ParseConfig.new('./config.conf')
-  DB = Sequel.connect('sqlite://./mybbs.db')
+  DB = Sequel.connect('sqlite://mybbs.db')
   # bbs route
   class MyBBS < Sinatra::Base
     use Rack::Session::Cookie,
@@ -24,11 +24,11 @@ module MySpace
     # post comment
     post '/api/v1/comment' do
       params = request.params
-      DB[:comments]
-        .insert(user_id: params['user_id'], thread_id: params['thread_id'],
-                comment: params['comment'])
+      DB[:comments].insert(comment: params['comment'],
+                           user_id: params['user_id'],
+                           thread_id: params['thread_id'])
     end
-    post 'api/v1/user' do
+    post '/api/v1/user' do
       params = request.params
       DB[:users].insert(name: params['name'])
       DB[:users].select.(name: params['name']).all.to_json

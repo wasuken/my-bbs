@@ -1,11 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    crass (1.0.4)
+    mini_portile2 (2.4.0)
     mustermann (1.0.3)
+    nokogiri (1.10.1)
+      mini_portile2 (~> 2.4.0)
+    nokogumbo (2.0.1)
+      nokogiri (~> 1.8, >= 1.8.4)
     parseconfig (1.0.8)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
+    sanitize (5.0.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
     sequel (5.16.0)
     sinatra (2.0.5)
       mustermann (~> 1.0)
@@ -20,6 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   parseconfig
+  sanitize
   sequel
   sinatra
   sqlite3

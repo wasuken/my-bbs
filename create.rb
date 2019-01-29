@@ -17,8 +17,10 @@ end
 DB.create_table!(:comments) do
   String :comment
   primary_key :comment_id
-  foreign_key :user_id, :user
-  foreign_key :thread_id, :thread
+  # foreign_key :user_id, :user
+  # foreign_key :thread_id, :thread
+  Integer :user_id
+  Integer :thread_id
 end
 
 DB.create_table!(:comment_routes) do

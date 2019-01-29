@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(["\n    padding:10px 0px 5px 20px\n\tfont-size:18px;\n"], ["\n    padding:10px 0px 5px 20px\n\tfont-size:18px;\n"]);
+var _templateObject = _taggedTemplateLiteral(["\n    padding:10px 0px 5px 20px\n\tfont-size:18px;\n"], ["\n    padding:10px 0px 5px 20px\n\tfont-size:18px;\n"]),
+    _templateObject2 = _taggedTemplateLiteral(["\n    padding:10px 0px 5px 20px;\n\tfloat: left;\n\twidth: 50%;\n\tfont-size:18px;\n"], ["\n    padding:10px 0px 5px 20px;\n\tfloat: left;\n\twidth: 50%;\n\tfont-size:18px;\n"]),
+    _templateObject3 = _taggedTemplateLiteral(["\n    padding:10px 0px 5px 20px\n\twidth: 50%;\n\tfloat: right;\n\tfont-size:18px;\n"], ["\n    padding:10px 0px 5px 20px\n\twidth: 50%;\n\tfloat: right;\n\tfont-size:18px;\n"]);
 
 var _react = require("react");
 
@@ -33,8 +35,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var Header = _styledComponents2.default.div(_templateObject);
-var LeftBox = _styledComponents2.default.div(_templateObject);
-var RightBox = _styledComponents2.default.div(_templateObject);
+var LeftBox = _styledComponents2.default.div(_templateObject2);
+var RightBox = _styledComponents2.default.div(_templateObject3);
 var FooterBox = _styledComponents2.default.div(_templateObject);
 
 var MainBox = function (_React$Component) {
