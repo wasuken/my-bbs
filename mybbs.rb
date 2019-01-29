@@ -10,15 +10,19 @@ module MySpace
   DB = Sequel.connect('sqlite://./mybbs.db')
   # bbs route
   class MyBBS < Sinatra::Base
+    use Rack::Session::Cookie,
+        key: 'rack.session',
+        expire_after: 3600,
+        secret: Digest::SHA256.hexdigest(rand.to_s)
     enable :method_override
     # post thread
-    post '/api/v1/thread/' do
+    post '/api/v1/thread' do
       params = request.params
       DB[:threads].insert(title: params['title'],
                           description: params['description'])
     end
     # post comment
-    post '/api/v1/comment/' do
+    post '/api/v1/comment' do
       params = request.params
       DB[:comments]
         .select(:comment_id, :comment)
