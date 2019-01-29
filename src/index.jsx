@@ -48,7 +48,7 @@ const links = [
 
 const threadList = () => {
 	let threads = [{title: "test"}];
-	var request = new XMLHttpRequest();
+	let request = new XMLHttpRequest();
 	request.open('GET', '/api/v1/threads', false);
 	request.send(null);
 
@@ -57,12 +57,12 @@ const threadList = () => {
 	}
 	let ts = threads.map((v, i) => (
 		<ListGroupItem key={i}>
-			<Link to={"/thread/comments/" + v.title}>{v.title}</Link>
+			<Link to={"/thread/comments/" + v.thread_id}>{v.title}</Link>
 		</ListGroupItem>
 	));
 	let tms = threads.map((v, i) => (
 		<ListGroupItem key={i}>
-			<Link to={"/thread/manage/" + v.title}>{v.title}</Link>
+			<Link to={"/thread/manage/" + v.thread_id}>{v.title}</Link>
 		</ListGroupItem>
 	));
 	return (
@@ -116,12 +116,12 @@ const templatePage = (leftComponent,rightComponent) => (
 
 const commentThreadPage = (props) => {
 	const {params} = props.match;
-	return templatePage(<ThreadComment thread={params.thread} />, linkList(links))
+	return templatePage(<ThreadComment thread_id={params.thread_id} />, linkList(links))
 };
 
 const manageThreadPage = (props) => {
 	const {params} = props.match;
-	return templatePage(<ThreadManage thread={params.thread} />, linkList(links))
+	return templatePage(<ThreadManage  thread_id={params.thread_id} />, linkList(links))
 };
 
 ReactDOM.render(
@@ -130,8 +130,8 @@ ReactDOM.render(
 			<div style={{marginLeft: '50px'}}>
 				<Switch>
 					<Route path='/thread/create' component={createThreadPage}/>
-					<Route path='/thread/comments/:thread' component={commentThreadPage}/>
-					<Route path='/thread/manage/:thread' component={manageThreadPage}/>
+					<Route path='/thread/comments/:thread_id' component={commentThreadPage}/>
+					<Route path='/thread/manage/:thread_id' component={manageThreadPage}/>
 					<Route component={startPage}/>
 				</Switch>
 			</div>

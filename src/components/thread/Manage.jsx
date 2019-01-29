@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import styled from "styled-components";
-import { InputGroup, InputGroupText, InputGroupAddon, Input, Button, ListGroup, ListGroupItem} from "reactstrap"
+import { Label, FormGroup, InputGroup, InputGroupText, InputGroupAddon, Input, Button, ListGroup, ListGroupItem} from "reactstrap"
 
 class Manage extends React.Component{
 	constructor(){

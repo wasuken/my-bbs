@@ -25,17 +25,23 @@ module MySpace
     post '/api/v1/comment' do
       params = request.params
       DB[:comments]
-        .select(:comment_id, :comment)
-        .where(thread_id: params['thread_id']).all.to_json
+        .insert(user_id: params['user_id'], thread_id: params['thread_id'],
+                comment: params['comment'])
+    end
+    post 'api/v1/user' do
+      params = request.params
+      DB[:users].insert(name: params['name'])
+      DB[:users].select.(name: params['name']).all.to_json
     end
     # get threads
     get '/api/v1/threads' do
-      DB[:threads].select(:title).all.to_json
+      DB[:threads].select(:title, :thread_id).all.to_json
     end
     # get comments
     get '/api/v1/comments/:thread_id' do
       DB[:comments]
-        .select(:comment).where(thread_id: params[:thread_id]).all.to_json
+        .select(:comment, :comment_id)
+        .where(thread_id: params[:thread_id]).all.to_json
     end
     delete '/api/v1/thread/:thread_id' do
       DB[:thread]
